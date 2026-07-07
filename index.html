@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PetTopia Ipês | Banho e Tosa em Cajamar, SP</title>
+  <meta name="description" content="Estética animal completa em Cajamar, SP: banho, tosa, remoção de subpelo, trimming, hidratação, pintura de pelo e mais. Agende pelo WhatsApp. Av. das Palmeiras, 347.">
+  <meta name="keywords" content="banho e tosa cajamar, pet shop cajamar, tosa cachorro cajamar, hidratacao pelo pet cajamar, estetica animal cajamar, pettopia ipes, trimming cajamar, remocao subpelo cajamar">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pettopiaipes.com.br/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pettopiaipes.com.br/">
+  <meta property="og:title" content="PetTopia Ipês | Estética Animal em Cajamar, SP">
+  <meta property="og:description" content="Estética animal completa para cães e gatos em Cajamar. Banho, tosa, hidratação, trimming e muito mais. Agende via WhatsApp.">
+  <meta property="og:image" content="https://pettopiaipes.com.br/fachada.png">
+  <meta property="og:locale" content="pt_BR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal:   '#00BFB3',
+            orange: '#E8924A',
+            dark:   '#1A1F2E',
+            mid:    '#5A6478',
+            light:  '#F7F9FC',
+          },
+          fontFamily: { sans: ['Nunito', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .hero-overlay {
+      background: linear-gradient(105deg, rgba(20,25,40,0.74) 0%, rgba(20,25,40,0.3) 65%, transparent 100%);
+    }
+
+    .nav-link { transition: color .15s; }
+    .nav-link:hover { color: #00BFB3; }
+
+    .service-card {
+      border-left: 3px solid transparent;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .service-card:hover {
+      border-left-color: #00BFB3;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+    }
+
+    /* ── Carrossel ── */
+    .carousel-outer { position: relative; overflow: hidden; }
+    .carousel-track {
+      display: flex;
+      gap: 12px;
+      transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+    .carousel-item {
+      flex-shrink: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: #eee;
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease;
+    }
+    .carousel-item:hover img { transform: scale(1.04); }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+      transition: box-shadow .2s, transform .15s;
+    }
+    .carousel-btn:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,.2);
+      transform: translateY(-50%) scale(1.05);
+    }
+    .carousel-btn.prev { left: 8px; }
+    .carousel-btn.next { right: 8px; }
+
+    .carousel-dots { display: flex; justify-content: center; gap: 6px; margin-top: 16px; }
+    .carousel-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #D1D9E6; border: none; cursor: pointer;
+      transition: background .2s, width .2s;
+    }
+    .carousel-dot.active { background: #00BFB3; width: 20px; border-radius: 4px; }
+
+    /* ── Restante ── */
+    .review-card { background: #fff; border-radius: 12px; padding: 28px; border: 1px solid #E8ECF4; }
+
+    .floating-wa {
+      position: fixed; bottom: 22px; right: 22px; z-index: 50;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .floating-wa:hover { transform: scale(1.08); box-shadow: 0 8px 28px rgba(37,211,102,.5); }
+
+    .stat-divider { width: 1px; background: #D1D9E6; height: 36px; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "PetTopia Ipês - Estética Animal",
+    "description": "Estética animal completa para cães e gatos em Cajamar, SP: banho, tosa, hidratação, trimming, remoção de subpelo, corte de unha e pintura de pelo.",
+    "url": "https://pettopiaipes.com.br",
+    "telephone": "+5511985111985",
+    "image": "https://pettopiaipes.com.br/fachada.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. das Palmeiras, 347",
+      "addressLocality": "Cajamar",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://www.instagram.com/pettopia_ipes/",
+      "https://www.facebook.com/pettopia.ipes"
+    ]
+  }
+  </script>
+</head>
+
+<body class="font-sans bg-white text-dark antialiased">
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="sticky top-0 z-40 bg-white/96 backdrop-blur border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
+
+      <a href="#inicio" class="flex items-center gap-2.5 no-underline">
+        <img src="logo.jpg" alt="PetTopia Ipês" class="h-9 w-9 rounded-full object-cover">
+        <span class="font-black text-[1.1rem] text-dark">PetTopia <span style="color:#E8924A">Ipês</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-mid">
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#galeria" class="nav-link">Galeria</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#avaliacoes" class="nav-link">Avaliações</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <a href="https://wa.me/5511985111985?text=Olá!+Gostaria+de+agendar+um+serviço."
+         target="_blank" rel="noopener"
+         class="hidden md:inline-flex items-center gap-2 text-sm font-bold text-white px-5 py-2.5 rounded-full no-underline"
+         style="background:#E8924A">
+        Agendar
+      </a>
+
+      <button id="menu-btn" class="md:hidden p-2 text-mid">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-5 py-4 flex flex-col gap-3">
+      <a href="#servicos" class="text-sm font-semibold text-dark py-1">Serviços</a>
+      <a href="#galeria" class="text-sm font-semibold text-dark py-1">Galeria</a>
+      <a href="#sobre" class="text-sm font-semibold text-dark py-1">Sobre</a>
+      <a href="#avaliacoes" class="text-sm font-semibold text-dark py-1">Avaliações</a>
+      <a href="#contato" class="text-sm font-semibold text-dark py-1">Contato</a>
+      <a href="https://wa.me/5511985111985?text=Olá!+Gostaria+de+agendar+um+serviço."
+         target="_blank" rel="noopener"
+         class="text-center text-sm font-bold text-white py-3 rounded-full no-underline mt-1"
+         style="background:#25D366">
+        Agendar via WhatsApp
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ===== HERO ===== -->
+  <section id="inicio" class="relative h-[90vh] min-h-[560px] flex items-center overflow-hidden">
+    <img src="fachada.png"
+         alt="Fachada da PetTopia Ipês - Estética Animal em Cajamar SP"
+         class="absolute inset-0 w-full h-full object-cover object-center">
+    <div class="hero-overlay absolute inset-0"></div>
+
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 w-full">
+      <div class="max-w-xl">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.08] mb-6">
+          Estética animal com cuidado de verdade
+        </h1>
+        <p class="text-white/75 text-lg leading-relaxed mb-10 max-w-md">
+          Banho, tosa, hidratação, trimming e muito mais — para cães e gatos em Cajamar. Atendimento individual com hora marcada.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://wa.me/5511985111985?text=Olá!+Gostaria+de+agendar+um+serviço."
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2.5 font-bold text-white px-7 py-4 rounded-full no-underline text-[0.95rem]"
+             style="background:#25D366">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Agendar via WhatsApp
+          </a>
+          <a href="#servicos"
+             class="inline-flex items-center gap-2 font-semibold text-white/90 px-7 py-4 rounded-full no-underline text-[0.95rem] border border-white/30 hover:border-white/60 transition-colors">
+            Ver serviços
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== BARRA DE CREDIBILIDADE ===== -->
+  <div class="bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-6 flex flex-wrap items-center justify-center gap-8">
+      <div class="text-center">
+        <div class="text-2xl font-black text-dark">5.0</div>
+        <div class="text-xs font-semibold text-mid mt-0.5">Google Reviews</div>
+      </div>
+      <div class="stat-divider hidden sm:block"></div>
+      <div class="text-center">
+        <div class="text-2xl font-black text-dark">Cães &amp; Gatos</div>
+        <div class="text-xs font-semibold text-mid mt-0.5">Especialistas</div>
+      </div>
+      <div class="stat-divider hidden sm:block"></div>
+      <div class="text-center">
+        <div class="text-2xl font-black text-dark">Hora marcada</div>
+        <div class="text-xs font-semibold text-mid mt-0.5">Atendimento exclusivo</div>
+      </div>
+      <div class="stat-divider hidden sm:block"></div>
+      <div class="text-center">
+        <div class="text-2xl font-black text-dark">Cajamar</div>
+        <div class="text-xs font-semibold text-mid mt-0.5">Av. das Palmeiras, 347</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ===== SERVICOS ===== -->
+  <section id="servicos" class="py-20" style="background:#F7F9FC">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+      <div class="mb-12">
+        <p class="text-sm font-bold tracking-widest uppercase mb-2" style="color:#00BFB3">Serviços</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-dark">O que a PetTopia oferece</h2>
+        <p class="text-mid mt-3 max-w-lg leading-relaxed">Estética animal completa para cães e gatos. Cada serviço realizado com produto certo, técnica especializada e todo o cuidado que o seu pet merece.</p>
+      </div>
+
+      <!-- Grid 3 colunas -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="service-card bg-white rounded-xl p-6 border border-gray-100">
+          <div class="text-xs font-bold tracking-wider uppercase mb-3" style="color:#00BFB3">Cães &amp; Gatos</div>
+          <h3 class="text-lg font-black text-dark mb-2">Banho</h3>
+          <p class="text-mid text-sm leading-relaxed">Shampoo e condicionador selecionados por tipo de pelo. Secagem completa e escovação incluídas. Seu pet sai perfumado e com a pelagem impecável.</p>
+          <a href="https://wa.me/5511985111985?text=Olá!+Quero+agendar+um+banho." target="_blank" rel="noopener" class="inline-block mt-4 text-sm font-bold no-underline" style="color:#00BFB3">Agendar →</a>
+        </div>
+
+        <div class="service-card bg-white rounded-xl p-6 border border-gray-100">
+          <div class="text-xs font-bold tracking-wider uppercase mb-3" style="color:#00BFB3">Cães &amp; Gatos</div>
+          <h3 class="text-lg font-black text-dark mb-2">Tosa</h3>
+          <p class="text-mid text-sm leading-relaxed">Tosa na tesoura ou máquina com acabamento preciso. Respeitamos o padrão da raça ou a preferência do tutor. Resultado profissional e consistente.</p>
+          <a href="https://wa.me/5511985111985?text=Olá!+Quero+agendar+uma+tosa." target="_blank" rel="noopener" class="inline-block mt-4 text-sm font-bold no-underline" style="color:#00BFB3">Agendar →</a>
+        </div>
+
+        <div class="service-card bg-white rounded-xl p-6 border border-gray-100">
+          <div class="text-xs font-bold tracking-wider uppercase mb-3" style="color:#E8924A">Especialidade</div>
+          <h3 class="text-lg font-black text-dark mb-2">Remoção de Subpelo</h3>
+          <p class="text-mid text-sm leading-relaxed">Eliminação do pelo morto e subpelo denso, reduzindo a queda excessiva e melhorando a circulação da pele. Ideal para raças de pelo duplo.</p>
+          <a href="https://wa.me/5511985111985?text=Olá!+Quero+saber+mais+sobre+remoção+de+subpelo." target="_blank" rel="noopener" class="inline-block mt-4 text-sm font-bold no-underline" style="color:#00BFB3">Agendar →</a>
+        </div>
+
+        <div class="service-card bg-white rounded-xl p-6 border border-gray-100">
+          <div class="text-xs font-bold tracking-wider uppercase mb-3" style="color:#E8924A">Especialidade</div>
+          <h3 class="text-lg font-black text-dark mb-2">Trimming</h3>
+          <p class="text-mid text-sm leading-relaxed">Técnica manual de retirada do pelo morto em raças de pelo áspero, como Schnauzer e Fox Terrier. Preserva a textura natural do pelo da raça.</p>
+          <a href="https://wa.me/5511985111985?text=Olá!+Quero+saber+mais+sobre+trimming." target="_blank" rel="noopener" class="inline-block mt-4 text-sm font-bold no-underline" style="color:#00BFB3">Agendar →</a>
+        </div>
+
+        <div class="service-card bg-white rounded-xl p-6 border border-gray-100">
+          <div class="text-xs font-bold tracking-wider uppercase mb-3" style="color:#E8924A">Especialidade</div>
+          <h3 class="text-lg font-black text-dark mb-2">Hidratação</h3>
+          <p class="text-mid text-sm leading-relaxed">Tratamento intensivo para pelagem ressecada ou danificada. Restaura o brilho, a maciez e a saúde do pelo do seu pet com produtos específicos.</p>
+          <a href="https://wa.me/5511985111985?text=Olá!+Quero+agendar+hidratação+para+meu+pet." target="_blank" rel="noopener" class="inline-block mt-4 text-sm font-bold no-underline" style="color:#00BFB3">Agendar →</a>
+        </div>
+
+        <div class="service-card bg-white rounded-xl p-6 border border-gray-100">
+          <div class="text-xs font-bold tracking-wider uppercase mb-3" style="color:#E8924A">Especialidade</div>
+          <h3 class="text-lg font-black text-dark mb-2">Corte de Unha</h3>
+          <p class="text-mid text-sm leading-relaxed">Corte seguro e preciso das unhas, evitando desconforto ao caminhar e lesões nas almofadas. Realizado com todo o cuidado para não atingir a veia.</p>
+          <a href="https://wa.me/5511985111985?text=Olá!+Quero+agendar+corte+de+unha." target="_blank" rel="noopener" class="inline-block mt-4 text-sm font-bold no-underline" style="color:#00BFB3">Agendar →</a>
+        </div>
+
+
+      </div>
+
+      <!-- Nota de valores -->
+      <div class="mt-6 flex items-start gap-4 bg-white rounded-xl p-6 border border-gray-100">
+        <div class="w-1 self-stretch rounded-full flex-shrink-0" style="background:#E8924A"></div>
+        <div class="flex-1">
+          <div class="font-bold text-dark text-sm mb-1">Valores sob consulta</div>
+          <div class="text-mid text-sm leading-relaxed">Os valores variam conforme porte, raça e tipo de pelo. Fale com a gente pelo WhatsApp para um orçamento personalizado e sem compromisso.</div>
+        </div>
+        <a href="https://wa.me/5511985111985?text=Olá!+Quero+saber+o+valor+do+serviço."
+           target="_blank" rel="noopener"
+           class="flex-shrink-0 self-center text-sm font-bold text-white px-5 py-2.5 rounded-full no-underline whitespace-nowrap"
+           style="background:#E8924A">
+          Consultar
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===== GALERIA — CARROSSEL ===== -->
+  <section id="galeria" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+        <div>
+          <p class="text-sm font-bold tracking-widest uppercase mb-2" style="color:#00BFB3">Galeria</p>
+          <h2 class="text-3xl sm:text-4xl font-black text-dark">Nossos clientes</h2>
+          <p class="text-mid mt-2">Fotos reais dos pets atendidos na PetTopia Ipês — Copa e Festa Junina.</p>
+        </div>
+        <a href="https://www.instagram.com/pettopia_ipes/" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 text-sm font-bold no-underline border border-gray-200 px-5 py-2.5 rounded-full hover:border-gray-400 transition-colors text-dark whitespace-nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @pettopia_ipes
+        </a>
+      </div>
+
+      <!-- Carrossel -->
+      <div class="carousel-outer" id="carouselOuter">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- As URLs abaixo usam o thumbnail do Google Drive (funciona quando logado na conta Google).
+               Para hospedagem pública, baixe as fotos e coloque na pasta /fotos/ do site. -->
+
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1swPHDY0C4VE-EPbtUQGyTlE_KV2YjebS&sz=w500" alt="Nina - Copa - PetTopia Ipês Cajamar" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1XZvtiu88NtXB2s-b4dATzsgNszr5IHB8&sz=w500" alt="Mylle - Festa Junina - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1NvDsmJ98YlXtkBkcuWVzRMpCIgDj2whj&sz=w500" alt="Valentina - Copa - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1hIeSdjTUPa2w-s7aqJJuWhDSP2Vkzo_F&sz=w500" alt="Jack - Festa Junina - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1liYeIVtVr9zrpL3CTIBdkhvlFyLA2wVM&sz=w500" alt="Ayla - Copa - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1TwT14XjwA8sWLHkUaPaOi2uwix60GjBo&sz=w500" alt="Olivia Maria - Festa Junina - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1A7jSwDa2dGB4lANRMx65MRzvBX26frdR&sz=w500" alt="Chokita - Copa - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1CYxHxL2LAaXKEgCZC6UgaTMool12MjMY&sz=w500" alt="Thor - Festa Junina - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1ZESumhlhApI6Y_onZJKH1fj8GqouWZRK&sz=w500" alt="Teddy - Copa - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1U25NgD4BJG85xXojFQI8ZTg17UIhyzd6&sz=w500" alt="Zara - Festa Junina - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1zwNWXDYibCXx1MaJacLGhH-p_CY1cGK7&sz=w500" alt="Amora - Copa - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1vN6msPgXAHB3rN5uwd1jtlx2xNBzTYf9&sz=w500" alt="Lugano - Festa Junina - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=18RsoB5FVSNrkTfuA33eYflxTDCpnMu2O&sz=w500" alt="Wally - Copa - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1B9iUN5gGuBcA_sZGWmgcp0cEeU17TKzp&sz=w500" alt="Megam - Festa Junina - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1qLeEIZE0jmx6xoIDXLXxVVUjLEV4H_n-&sz=w500" alt="Linda - Copa - PetTopia Ipês" loading="lazy">
+          </div>
+          <div class="carousel-item" style="width:260px">
+            <img src="https://drive.google.com/thumbnail?id=1iafD-Yr0zz4t3cWqYsvJFdTFehXtr3vT&sz=w500" alt="Atendimento PetTopia Ipês Cajamar" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Botões -->
+        <button class="carousel-btn prev" id="carouselPrev" aria-label="Anterior">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1F2E" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn next" id="carouselNext" aria-label="Próximo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1F2E" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div class="carousel-dots" id="carouselDots"></div>
+
+    </div>
+  </section>
+
+
+  <!-- ===== SOBRE ===== -->
+  <section id="sobre" class="py-20" style="background:#F7F9FC">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-14 items-center">
+
+      <div>
+        <p class="text-sm font-bold tracking-widest uppercase mb-3" style="color:#00BFB3">Sobre nós</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-dark mb-5 leading-tight">
+          Nossa equipe cuida do seu pet como se fosse o nosso
+        </h2>
+        <p class="text-mid leading-relaxed mb-4">
+          A PetTopia Ipês é um estúdio de estética animal dedicado exclusivamente ao cuidado de cães e gatos. Nossa equipe é apaixonada pelo que faz — e isso aparece em cada resultado.
+        </p>
+        <p class="text-mid leading-relaxed mb-8">
+          Trabalhamos com hora marcada para garantir atendimento individual, sem pressa e sem estresse para o seu pet. Estamos na Av. das Palmeiras, 347, em Cajamar, SP.
+        </p>
+
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center gap-3 text-sm text-dark">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#00BFB3"></div>
+            Atendimento individual com hora marcada
+          </div>
+          <div class="flex items-center gap-3 text-sm text-dark">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#00BFB3"></div>
+            Equipe especializada e treinada
+          </div>
+          <div class="flex items-center gap-3 text-sm text-dark">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#00BFB3"></div>
+            Produtos específicos para cada tipo de pelo
+          </div>
+          <div class="flex items-center gap-3 text-sm text-dark">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#00BFB3"></div>
+            Ambiente limpo, seguro e tranquilo
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <img src="equipe.png"
+             alt="Equipe PetTopia Ipês - Estética Animal Cajamar SP"
+             class="rounded-2xl w-full object-cover shadow-lg"
+             style="max-height:460px; object-position: center top;">
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===== AVALIACOES ===== -->
+  <section id="avaliacoes" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+        <div>
+          <p class="text-sm font-bold tracking-widest uppercase mb-2" style="color:#00BFB3">Avaliações</p>
+          <h2 class="text-3xl sm:text-4xl font-black text-dark">O que dizem os tutores</h2>
+          <div class="flex items-center gap-2 mt-3">
+            <span class="text-2xl font-black text-dark">5.0</span>
+            <div class="flex gap-0.5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="text-mid text-sm">no Google</span>
+          </div>
+        </div>
+        <a href="https://www.google.com/maps/search/PetTopia+Ipes+Cajamar" target="_blank" rel="noopener"
+           class="text-sm font-bold no-underline text-mid hover:text-dark transition-colors whitespace-nowrap">
+          Ver no Google Maps →
+        </a>
+      </div>
+
+      <!-- Substitua pelos textos reais das reviews do Google -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="review-card">
+          <div class="flex gap-0.5 mb-4">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="text-dark text-sm leading-relaxed mb-5">"Minha cachorra sai linda sempre! Atendimento super atencioso, pontual e o ambiente é muito limpo. Recomendo para todo mundo de Cajamar."</p>
+          <div class="font-bold text-dark text-sm">Ana Paula</div>
+          <div class="text-mid text-xs mt-0.5">Cliente PetTopia Ipês</div>
+        </div>
+
+        <div class="review-card">
+          <div class="flex gap-0.5 mb-4">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="text-dark text-sm leading-relaxed mb-5">"Meu gato costumava ficar estressado em outros lugares. Aqui ele voltou tranquilo e cheiroso. Profissionais que realmente entendem de gatos."</p>
+          <div class="font-bold text-dark text-sm">Marcos Vinicius</div>
+          <div class="text-mid text-xs mt-0.5">Cliente PetTopia Ipês</div>
+        </div>
+
+        <div class="review-card">
+          <div class="flex gap-0.5 mb-4">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="text-dark text-sm leading-relaxed mb-5">"Tosa ficou perfeita, exatamente como pedi. Ambiente limpo, atendimento rápido e super cuidadoso. Com certeza voltarei sempre."</p>
+          <div class="font-bold text-dark text-sm">Camila Rocha</div>
+          <div class="text-mid text-xs mt-0.5">Cliente PetTopia Ipês</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===== CTA ===== -->
+  <section class="py-20" style="background:#00BFB3">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">Agende o horário do seu pet</h2>
+      <p class="text-white/80 text-lg mb-8 leading-relaxed max-w-md mx-auto">
+        Fale com a gente pelo WhatsApp. Rápido, sem complicação e com o cuidado que seu pet merece.
+      </p>
+      <a href="https://wa.me/5511985111985?text=Olá!+Gostaria+de+agendar+um+serviço."
+         target="_blank" rel="noopener"
+         class="inline-flex items-center gap-3 bg-white font-black px-8 py-4 rounded-full no-underline text-[0.95rem]"
+         style="color:#00BFB3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#00BFB3"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        (11) 98511-1985
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ===== CONTATO ===== -->
+  <section id="contato" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+      <div class="mb-10">
+        <p class="text-sm font-bold tracking-widest uppercase mb-2" style="color:#00BFB3">Localização</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-dark">Onde estamos</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+
+        <div class="flex flex-col gap-4">
+
+          <div class="flex items-start gap-4 p-5 rounded-xl border border-gray-100">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#E0F7F5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00BFB3" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="font-bold text-dark text-sm mb-1">Endereço</div>
+              <div class="text-mid text-sm">Av. das Palmeiras, 347 — Cajamar, SP</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-5 rounded-xl border border-gray-100">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#E8F5E9">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="font-bold text-dark text-sm mb-1">WhatsApp</div>
+              <a href="https://wa.me/5511985111985" target="_blank" rel="noopener"
+                 class="text-sm font-bold text-green-600 no-underline hover:underline">(11) 98511-1985</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-5 rounded-xl border border-gray-100">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#FFF3E8">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8924A" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="font-bold text-dark text-sm mb-1">Horário de Funcionamento</div>
+              <a href="https://www.google.com/maps/search/PetTopia+Ipes+Cajamar" target="_blank" rel="noopener"
+                 class="text-sm font-bold no-underline hover:underline" style="color:#00BFB3">
+                Ver horário atualizado no Google →
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-5 rounded-xl border border-gray-100">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 bg-pink-50">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#EC4899" stroke="none"/></svg>
+            </div>
+            <div>
+              <div class="font-bold text-dark text-sm mb-2">Redes Sociais</div>
+              <div class="flex gap-3">
+                <a href="https://www.instagram.com/pettopia_ipes/" target="_blank" rel="noopener"
+                   class="text-xs font-bold text-pink-600 no-underline hover:underline">Instagram →</a>
+                <span class="text-gray-300">|</span>
+                <a href="https://www.facebook.com/pettopia.ipes" target="_blank" rel="noopener"
+                   class="text-xs font-bold text-blue-600 no-underline hover:underline">Facebook →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm" style="height:360px">
+          <iframe
+            src="https://maps.google.com/maps?q=Av.+das+Palmeiras+347+Cajamar+SP&output=embed&hl=pt-BR&z=16"
+            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="PetTopia Ipês - Av. das Palmeiras 347, Cajamar SP">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:#1A1F2E" class="text-white py-10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <div class="font-black text-lg mb-1">PetTopia <span style="color:#E8924A">Ipês</span></div>
+        <div class="text-sm" style="color:rgba(255,255,255,.45)">Estética Animal · Banho e Tosa · Cajamar, SP</div>
+        <div class="text-xs mt-0.5" style="color:rgba(255,255,255,.25)">CNPJ 34.876.226/0001-72</div>
+      </div>
+
+      <!-- Ícones SVG inline — sem dependência de CDN -->
+      <div class="flex gap-3">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/pettopia_ipes/" target="_blank" rel="noopener" aria-label="Instagram"
+           class="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+           style="background:rgba(255,255,255,.12)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+          </svg>
+        </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/pettopia.ipes" target="_blank" rel="noopener" aria-label="Facebook"
+           class="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+           style="background:rgba(255,255,255,.12)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5511985111985" target="_blank" rel="noopener" aria-label="WhatsApp"
+           class="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+           style="background:rgba(255,255,255,.12)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 border-t mt-8 pt-6 text-center text-xs" style="border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.25)">
+      © 2025 PetTopia Ipês. Todos os direitos reservados.
+    </div>
+  </footer>
+
+
+  <!-- WhatsApp flutuante -->
+  <a href="https://wa.me/5511985111985?text=Olá!+Gostaria+de+agendar+um+serviço."
+     target="_blank" rel="noopener" class="floating-wa" aria-label="Agendar via WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+
+  <script>
+    // Menu mobile
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // ── Carrossel ──────────────────────────────────────────────
+    (function () {
+      const track    = document.getElementById('carouselTrack');
+      const items    = Array.from(track.children);
+      const btnPrev  = document.getElementById('carouselPrev');
+      const btnNext  = document.getElementById('carouselNext');
+      const dotsWrap = document.getElementById('carouselDots');
+
+      const GAP       = 12;
+      const ITEM_W    = 260;
+      const STEP      = ITEM_W + GAP;
+      const TOTAL     = items.length;
+      let current     = 0;
+      let autoTimer   = null;
+
+      // Quantos visíveis
+      function visibleCount() {
+        const w = track.parentElement.offsetWidth;
+        return Math.max(1, Math.floor(w / STEP));
+      }
+
+      // Máx index (último grupo)
+      function maxIndex() { return Math.max(0, TOTAL - visibleCount()); }
+
+      // Criar dots
+      function buildDots() {
+        dotsWrap.innerHTML = '';
+        const pages = maxIndex() + 1;
+        for (let i = 0; i < pages; i++) {
+          const d = document.createElement('button');
+          d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+          d.setAttribute('aria-label', 'Ir para página ' + (i+1));
+          d.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(d);
+        }
+      }
+
+      function updateDots() {
+        dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function goTo(idx) {
+        current = Math.max(0, Math.min(idx, maxIndex()));
+        track.style.transform = `translateX(-${current * STEP}px)`;
+        updateDots();
+      }
+
+      function next() { goTo(current >= maxIndex() ? 0 : current + 1); }
+      function prev() { goTo(current <= 0 ? maxIndex() : current - 1); }
+
+      function startAuto() {
+        stopAuto();
+        autoTimer = setInterval(next, 3500);
+      }
+      function stopAuto() { clearInterval(autoTimer); }
+
+      btnNext.addEventListener('click', () => { stopAuto(); next(); startAuto(); });
+      btnPrev.addEventListener('click', () => { stopAuto(); prev(); startAuto(); });
+
+      // Swipe touch
+      let touchStartX = 0;
+      track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive: true});
+      track.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { stopAuto(); diff > 0 ? next() : prev(); startAuto(); }
+      }, {passive: true});
+
+      // Pausar ao passar o mouse
+      track.parentElement.addEventListener('mouseenter', stopAuto);
+      track.parentElement.addEventListener('mouseleave', startAuto);
+
+      buildDots();
+      startAuto();
+
+      window.addEventListener('resize', () => { buildDots(); goTo(0); });
+    })();
+  </script>
+
+</body>
+</html>
